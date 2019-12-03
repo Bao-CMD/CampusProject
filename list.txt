@@ -1,0 +1,32 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs24 \cf0 Benson Earth Sciences, 40.008016, -105.265687\
+Center for Community, 40.004428, -105.264932\
+Clare Small Arts and Science, 40.010610, -105.269791\
+Colorado Law, 40.001211, -105.262419\
+Cristol Chemistry and Biochemistry, 40.007627, -105.271000\
+Duane Physics and Astrophysics, 40.008019, -105.267473\
+Eaton Humanities, 40.009284, -105.271702\
+Ekeley Science, 40.008222, -105.271786\
+Engineering Center, 40.006817, -105.262826\
+Environmental Design, 40.006974, -105.269215\
+Fiske Planetarium, 40.003742, -105.263430\
+Fleming Law, 40.001983, -105.263402\
+Folsom Field, 40.009573, -105.266846\
+Hellems Arts and Sciences, 40.007663, -105.272682\
+Imig Music Building, 40.006029, -105.269062\
+Ketchum Arts and Sciences, 40.008196, -105.270215\
+Koelbel Building (Leeds School of Business), 40.005646, -105.263444\
+Macky Auditorium Concert Hall, 40.010001, -105.272777\
+Muenzinger Auditorium, 40.008736, -105.268876\
+Norlin Library, 40.008822, -105.270791\
+Sewall Dining Center, 40.010593, -105.271550\
+Student Recreation Center, 40.010289, -105.269415\
+University Memorial Center, 40.006737, -105.271479\
+Wardenburg Health Center, 40.005336, -105.268637\\}
