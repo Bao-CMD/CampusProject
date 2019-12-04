@@ -9,8 +9,9 @@ using namespace std;
 
 struct node {
   string name;
-  int distanceX;
-  int distanceY;
+  float distanceY;
+  float distanceX;
+  node* next;
 };
 
 struct vertex;
@@ -36,6 +37,8 @@ class graph {
   vector<vertex*> vertices;
 };
 
+#endif
+
 float distanceY (float y1, float y2);
 float distanceX (float x1, float x2);
 float diagonalDistance (float x, float y);
@@ -43,5 +46,18 @@ float worstCaseDistance(float x, float y);
 float averageCaseDistance(float best, float worst);
 float distanceToTime (float distance);
 
+#ifndef HASH_HPP
+#define HASH_HPP
+
+class hashtable {
+  private:
+    static const int tableSize = 31;
+    node* table[tableSize];
+  public:
+    hashtable();
+    int hashFunction(string key);
+    void addItem(string name, float distY, float distX);
+    void printTable();
+};
 
 #endif
