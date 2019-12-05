@@ -31,7 +31,7 @@ struct vertex{
 class graph {
   public:
   void addEdge(string v1, string v2);
-  void addVertex(string v);
+  void addVertex(string name);
   void DijkstraAlgorithm(string start, string end);
   private:
   vector<vertex*> vertices;
@@ -57,7 +57,7 @@ class hashtable {
     hashtable();
     int hashFunction(string key);
     void addItem(string name, float distY, float distX);
-    void printTable();
+    void printTable(); //Test function
 };
 
 #endif

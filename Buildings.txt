@@ -1,102 +1,24 @@
-Academic Advising Center: Students in Transition
-Administrative and Research Center East Campus
-Armory
-Arts and Sciences Finance and Payroll Adminstration
-Arts and Sciences Office Building 1
-ATLAS Building, Roser (Alliance for Technology, Learning, and Society)
-Balch Fieldhouse
-Benson Earth Sciences Building
-Biotechnology Building, Jennie Smoly Caruthers
-Bruce Curtis Building (Museum Collections)
-Carlson Gymnasium
-Center for Asian Studies
-Center for Astrophysics and Space Astronomy
-Center for Community
-Charlotte York Irey Theatre (in University Theatre Building)
-Children's Center
-CIRES (Cooperative Institute for Research in Environmental Sciences)
-Clare Small Arts and Sciences
-Computing Center
-Continuing Education Center
-Cristol Chemistry and Biochemistry Building
-CU Events Center
-Dal Ward Athletic Center
-Denison ARts and Sciences Building
-Discovery Learning Center
-Duane D-Wing
-Duane Physical Laboratories (includes Duane Physics, Duane D-Wing, Gamow Tower, and JILA)
-Duane Physics
-Eaton Humanities Building
-Economics Building
-Education Building
-Ekeley Sciences Building
-Engineering Center
-Environmental Design Building
-Environmental Health and Safety Center
-Euclid Avenue AutoPark
-Fiske Planetarium and Science Center
-Fleming Building
-Folsom Field
-Gamow Tower (in Duane Physical Laboratories)
-Gates Woodruff Women's Studies Cottage
-Gold Biosciences Building (MCD Biology)
-Grounds and Service Center
-Guggenheim Geography Building
-Hale Science Building
-Health Physics Laboratory
-Hellems Arts and Sciences Building (includes Mary Rippon Outdoor Theatre)
-Henderson Building (Museum of Natural History)
-Housing & Dining Services Facilities Operations Center
-Housing System Service Center
-Imig Music Building
-Institute for Behavioral Genetics
-Institute of Behavioral Science
-Integrated Teaching and Learning Laboratory
-International English Center
-Jennie Smoly Caruthers Biotechnology Building
-JILA
-Ketchum Arts and Science Building
-Koelbel Building (Leeds School of Business)
-Koenig Alumni Center
-LASP Space Technology Research Center
-Lesser House
-Life Science Research Laboratory, RL4
-Life Sciences Laboratories Complex (includes Gold Biosciences, Mueunzinger Psychology, Porter Biosciences, and Ramaley Biology)
-MacAllister Research Center
-Macky Auditorium
-Marine Street Science Center, Research Laboratory, RL6
-Mary Rippon Outdoor Theatre (at Hellems Arts and Sciences)
-Mathematics Building
-McKenna Languages Building
-Muenzinger Psychology and Biopsychology
-Norlin Library
-Old Main
-Page Foundation Center
-Police and Parking Services
-Porter Biosciences
-Power House
-Ramaley Biology Building
-Regent Administrative Center
-Regent Drive AutoPark
-Research Laboratory, RL2
-Research Park Greenhouse
-Rose Litman Research Laboratory, RL1
-Roser ATLAS Building
-Science Learning Laboratory
-Sommers-Bausch Observatory
-Space Science Building
-Speech, Language and Hearing Sciences Building
-Stadium Building
-Stadium Ticket Building
-Student Recreation Center
-Technology Learning Center
-Transportation Center
-University Administrative Center
-University Club
-University Memorial Center
-University Theatre Building (includes Charlotte York Irey Theatre)
-Visual Arts Complex
-Wardenburg Health Center
-Wolf Law Building
-Woodbury Arts and Sciences
-
+Benson Earth Sciences, 40.008016, -105.265687
+Center for Community, 40.004428, -105.264932
+Clare Small Arts and Science, 40.010610, -105.269791
+Colorado Law, 40.001211, -105.262419
+Cristol Chemistry and Biochemistry, 40.007627, -105.271000
+Duane Physics and Astrophysics, 40.008019, -105.267473
+Eaton Humanities, 40.009284, -105.271702
+Ekeley Science, 40.008222, -105.271786
+Engineering Center, 40.006817, -105.262826
+Environmental Design, 40.006974, -105.269215
+Fiske Planetarium, 40.003742, -105.263430
+Fleming Law, 40.001983, -105.263402
+Folsom Field, 40.009573, -105.266846
+Hellems Arts and Sciences, 40.007663, -105.272682
+Imig Music Building, 40.006029, -105.269062
+Ketchum Arts and Sciences, 40.008196, -105.270215
+Koelbel Building (Leeds School of Business), 40.005646, -105.263444
+Macky Auditorium Concert Hall, 40.010001, -105.272777
+Muenzinger Auditorium, 40.008736, -105.268876
+Norlin Library, 40.008822, -105.270791
+Sewall Dining Center, 40.010593, -105.271550
+Student Recreation Center, 40.010289, -105.269415
+University Memorial Center, 40.006737, -105.271479
+Wardenburg Health Center, 40.005336, -105.268637
