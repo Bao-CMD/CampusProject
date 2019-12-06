@@ -30,22 +30,32 @@ int main(int argc, char* argv[]) {
   string x;
 
   if (fs.is_open()) {
-  while (fs) {//!(fs.eof()) {
-      // while () {
-        getline(fs, line);
-        istringstream ss(line);
+    while (fs) {
+      getline(fs, line);
+      istringstream ss(line);
 
-        getline (ss, name, ',');
-        getline (ss, x, ',');
-        float dX = stof(x);;
-        getline (ss, y);
-        float dY = stof(y);
+      getline (ss, name, ',');
+      getline (ss, x, ',');
+      float dX = stof(x);
+      getline (ss, y);
+      float dY = stof(y);
 
-        h.addItem(name, dY, dX);
-      // }
+      h.addItem(name, dY, dX);
     }
   }
   fs.close();
   h.printTable();
+
+  int indexWardenburg = h.hashFunction("Wardenburg Health Center");
+  cout << indexWardenburg << endl;
+  node* location = probeFunction(h[indexWardenburg], "Wardenburg Health Center");
+  // cout << location->name << endl;
+  // cout << location->distanceX << endl;
+  // cout << location->distanceY << endl;
+
+  //Test 3: using probing function
+  // node * n = NULL;
+  // int index = hashFunction("Center for Community");
+
   return 0;
 }

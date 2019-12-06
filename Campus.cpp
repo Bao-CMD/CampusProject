@@ -53,7 +53,7 @@ void graph::addVertex(string name) {
   //Search for duplicates
   bool found = false;
   for (unsigned int i = 0; i < vertices.size(); i++) {
-    if (vertices[i]->name = name) {
+    if (vertices[i]->name == name) {
       found = true;
     }
   }
@@ -65,24 +65,33 @@ void graph::addVertex(string name) {
 }
 
 //Function to add edges between CU  Buildings
-void graph::addEdge(string v1, string v2) {
+void graph::addEdge(node* v1, node* v2)
+{
   //Looking for vector of vertices v1
-  for (unsigned int i = 0; i < vertices.size(); i++) {
-    if (vertices[i]->name == v1) {
-      for (unsigned int j = 0; i < vertices.size(); j++) {
-        if (vertices[j]->name == v2 && i != j) {
+  for (unsigned int i = 0; i < vertices.size(); i++)
+  {
+    if (vertices[i]->name == v1->name)
+    {
+      for (unsigned int j = 0; i < vertices.size(); j++)
+      {
+        if (vertices[j]->name == v2->name && i != j)
+        {
           //Calculating average distance between v1 and v2
-          float x =
+          float distX = abs(v1->distanceX - v2->distanceX);
+          float distY = abs(v1->distanceY - v2->distanceY);
+          float distC = diagonalDistance(distX, distY);
+          float avg = averageCaseDistance(distC, distX+distY);
+          float time = distanceToTime(avg);
           //Setting vertices to v1 and v2
           adjvertex av1;
           av1.v = vertices[j];
+          av1.weight = time;
           vertices[i]->adj.push_back(av1);
-          vertices[i]->distance = ;
           //Rendition for bidirection
           adjvertex av2;
           av2.v = vertices[i];
+          av2.weight = time;
           vertices[j]->adj.push_back(av2);
-          vertices[j]->distance = ;
         }
       }
     }
@@ -94,11 +103,10 @@ vertex* graph::DijkstraAlgorithm(string start, string end) {
   vertex* startV;
   vertex* endV;
   for (unsigned int i = 0; i < vertices.size(); i++) {
-    if (vertices[i]->name == start) {
+    if (vertices[i]->name == start)
       startV = vertices[i];
-    } else if (vertices[i]->name == end) {
+    else if (vertices[i]->name == end)
       endV = vertices[i];
-    }
   }
   startV->visited = true;
   startV->distance = 0;
@@ -126,7 +134,28 @@ vertex* graph::DijkstraAlgorithm(string start, string end) {
     solvedV->visited = true;
     solved.push_back(solvedV);
   }
-  return endv;
+  return endV;
+}
+
+void graph::printHelper(vertex* end) {
+  if (end == NULL) return;
+  else {
+    printHelper(end->pred);
+    cout << end->name << " ";
+  }
+}
+
+void graph::printPath(string end) {
+  vertex* last;
+  for (unsigned int i = 0; i < vertices.size(); i++) {
+    if (vertices[i]->name == end) {
+      last = vertices[i];
+    }
+  }
+  if (last->pred != NULL) {
+    printHelper(last->pred);
+  }
+  cout << last->name << endl;
 }
 
 //Constructor to initialize hash table size
@@ -171,6 +200,15 @@ void hashtable::printTable() {
     cout << "\t" << table[i]->name << endl;
     cout << "\t" << table[i]->distanceY << " - " << table[i]->distanceX << endl;
   }
+}
+
+//Function to probe through the hash table
+node* hashtable::probeFunction (node* curr, string name) {
+  node* ptr = curr;
+  while (ptr->name != name) {
+    ptr = ptr->next;
+  }
+  return ptr;
 }
 
 //Hash function

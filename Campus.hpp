@@ -1,5 +1,3 @@
-#ifndef GRAPH_H
-#define GRAPH_H
 #include <iostream>
 #include <string>
 #include <vector>
@@ -7,17 +5,33 @@
 
 using namespace std;
 
+#ifndef NODE_H
+#define NODE_H
+
 struct node {
   string name;
   float distanceY;
   float distanceX;
-  node* next;
+  node* next = NULL;
+  addElement(string n,float x,float y) {
+    name = n;
+    distanceY = y;
+    distanceX = x;
+  }
 };
+
+struct node nodeArray[24];
+
+#endif
+
+#ifndef GRAPH_H
+#define GRAPH_H
 
 struct vertex;
 
 struct adjvertex {
   vertex* v;
+  int weight; //Time between
 };
 
 struct vertex{
@@ -29,12 +43,14 @@ struct vertex{
 };
 
 class graph {
-  public:
-  void addEdge(string v1, string v2);
-  void addVertex(string name);
-  void DijkstraAlgorithm(string start, string end);
   private:
   vector<vertex*> vertices;
+  public:
+  void addEdge(node* v1, node* v2);
+  void addVertex(string name);
+  vertex* DijkstraAlgorithm(string start, string end);
+  void printHelper(vertex* end);
+  void printPath(string end);
 };
 
 #endif
@@ -58,6 +74,7 @@ class hashtable {
     int hashFunction(string key);
     void addItem(string name, float distY, float distX);
     void printTable(); //Test function
+    node* probeFunction(node* curr, string name);
 };
 
 #endif
