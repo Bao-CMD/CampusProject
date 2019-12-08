@@ -70,14 +70,14 @@ string time (float fTime);
 
 class hashtable {
   private:
-    static const int tableSize = 31;
+    static const int tableSize = 37;
     node* table[tableSize];
   public:
     hashtable();
     int hashFunction(string key);
     void addItem(string name, float distY, float distX);
     void printTable(); //Test function
-    node* probeFunction(node* curr, string name);
+    int probeFunction(int index, string name);
     node* tableNode(int index);
 };
 
