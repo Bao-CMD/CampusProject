@@ -50,8 +50,8 @@ float averageCaseDistance(float best, float worst) {
 //Function to convert distance in miles to walking time using the average
 //walk pace of 1 mile every 15 minutes
 float distanceToTime (float distance) {
-  float minutes = distance / 15;
-  return minutes;
+  float minutes = distance * 20;
+  return round(minutes);
 }
 
 //Function to add vertex of CU buildings
@@ -82,17 +82,17 @@ void graph::addEdge(node v1, node v2)
       {
         if (vertices[j]->name == v2.name && i != j)
         {
-          cout << "Distance between " << v1.name << " and " << v2.name << endl;
+          // cout << "Distance between " << v1.name << " and " << v2.name << endl;
           //Calculating average distance between v1 and v2
           float distX = abs(v1.distanceX - v2.distanceX);
           // cout << "\tX distance in miles: " << distX << endl;
           float distY = abs(v1.distanceY - v2.distanceY);
           // cout << "\tY distance in miles: " << distY << endl;
           float distC = diagonalDistance(distX, distY);
-          cout << "\tDistance: " << distC << endl;
+          // cout << "\tDistance: " << distC << endl;
           float avg = averageCaseDistance(distC, distX+distY);
           float time = distanceToTime(avg);
-          cout << "\tTime: " << time << endl;
+          // cout << "\tTime: " << time << endl;
           //Setting vertices to v1 and v2
           adjvertex av1;
           av1.v = vertices[j];
@@ -231,12 +231,19 @@ void hashtable::printTable() {
 }
 
 //Function to probe through the hash table
-node* hashtable::probeFunction (node* curr, string name) {
-  node* ptr = curr;
-  while (ptr->name != name) {
-    ptr = ptr->next;
+int hashtable::probeFunction (int index, string name) {
+  int newIndex = index;
+  cout << "enters probe function" << endl;
+  if (table[newIndex]->name == name) {
+    return newIndex;
+  } else {
+    if (newIndex == tableSize-1) {
+      newIndex = 0;
+    } else {
+      newIndex++;
+    }
   }
-  return ptr;
+  return newIndex;
 }
 
 node* hashtable::tableNode(int index) {
