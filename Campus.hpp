@@ -31,13 +31,13 @@ struct vertex;
 
 struct adjvertex {
   vertex* v;
-  int weight; //Time between
+  float weight; //Time between
 };
 
 struct vertex{
   string name;
   bool visited = false;
-  float distance = 0;
+  float distance = 0; //Distance is the time between vertices
   vertex *pred = NULL;
   vector<adjvertex> adj;
 };
@@ -50,6 +50,7 @@ class graph {
   void addVertex(string name);
   vertex* DijkstraAlgorithm(string start, string end);
   void printGraph();
+  void printVertices();
   void printHelper(vertex* end);
   void printPath(string end);
 };
@@ -62,6 +63,7 @@ float diagonalDistance (float x, float y);
 float worstCaseDistance(float x, float y);
 float averageCaseDistance(float best, float worst);
 float distanceToTime (float distance);
+string time (float fTime);
 
 #ifndef HASH_HPP
 #define HASH_HPP

@@ -49,7 +49,7 @@ int main (int argc, char* argv[]) {
       // cout << "\t" << nodeArray[i].name << endl;
       // cout << "\t" << nodeArray[i].distanceX << endl;
       // cout << "\t" << nodeArray[i].distanceY << endl;
-      // i++;
+      i++;
       // // }
     }
   }
@@ -76,16 +76,21 @@ int main (int argc, char* argv[]) {
   for (int i = 0; i < 24; i++) {
     g.addVertex(nodeArray[i].name);
   }
+
+  // //Printing list of verticies
+  // g.printVertices();
+
   //Adding edges
   for (int j = 0; j < 24; j++) {
     for (int k = j+1; k < 24; k++) {
       node v1 = nodeArray[j];
       node v2 = nodeArray[k];
+
       g.addEdge(v1, v2);
     }
   }
-  //Printing the graph
-  g.printGraph();
+  // //Printing the graph
+  // g.printGraph();
 
   fs.close();
 

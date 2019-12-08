@@ -9,25 +9,31 @@ using namespace std;
 
 //Function to calculate and convert latitude degrees to miles
 float distanceY (float y1, float y2) {
-  float sum = 0.0;
+  float diff = 0.0;
   float milesPerDegree = 69.2;
-  sum = y1 + y2;
-  float miles = sum / milesPerDegree;
+  diff = abs(y1 - y2);
+  float miles = diff * milesPerDegree;
   return miles;
 }
 
 //Function to calculate and convert longitude degrees to miles
 float distanceX (float x1, float x2) {
-  float sum = 0.0;
+  float diff = 0.0;
   float milesPerDegree = 69.2;
-  sum = x1 + x2;
-  float miles = sum * milesPerDegree;
+  diff = abs(x1 - x2);
+  float miles = diff * milesPerDegree;
   return miles;
 }
 
 //Function to get the immediate distance between point A and B (best case)
 float diagonalDistance(float x, float y) {
-  float diagonal = sqrt(pow(x,2)+pow(y,2));
+  //Converting miles to feet
+  int feetX = x * 5280;
+  cout << feetX << endl;
+  int feetY = y * 5280;
+  cout << feetY << endl;
+  float feetC = sqrt(pow(feetX,2)+pow(feetY,2));
+  float diagonal = feetC / 5280;
   return diagonal;
 }
 
@@ -72,16 +78,21 @@ void graph::addEdge(node v1, node v2)
   {
     if (vertices[i]->name == v1.name)
     {
-      for (unsigned int j = 0; i < vertices.size(); j++)
+      for (unsigned int j = 0; j < vertices.size(); j++)
       {
         if (vertices[j]->name == v2.name && i != j)
         {
+          cout << "Distance between " << v1.name << " and " << v2.name << endl;
           //Calculating average distance between v1 and v2
           float distX = abs(v1.distanceX - v2.distanceX);
+          // cout << "\tX distance in miles: " << distX << endl;
           float distY = abs(v1.distanceY - v2.distanceY);
+          // cout << "\tY distance in miles: " << distY << endl;
           float distC = diagonalDistance(distX, distY);
+          cout << "\tDistance: " << distC << endl;
           float avg = averageCaseDistance(distC, distX+distY);
           float time = distanceToTime(avg);
+          cout << "\tTime: " << time << endl;
           //Setting vertices to v1 and v2
           adjvertex av1;
           av1.v = vertices[j];
@@ -144,6 +155,13 @@ void graph::printGraph() {
       cout << "\t" << vertices[i]->adj[j].v->name << endl;
       cout << "\t" << vertices[i]->adj[j].weight << endl;
     }
+  }
+}
+
+void graph::printVertices() {
+  for (unsigned int i = 0; i < vertices.size(); i++) {
+    cout << "Vertex: " << i << " ";
+    cout << vertices[i]->name << endl;
   }
 }
 
