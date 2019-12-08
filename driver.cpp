@@ -9,7 +9,7 @@
 
 using namespace std;
 
-struct node nodeArray[25];
+struct node nodeArray[26];
 
 void menu()
 {
@@ -18,26 +18,27 @@ void menu()
     cout << "3. Clare Small Arts and Science" << endl;
     cout << "4. Colorado Law" << endl;
     cout << "5. Cristol Chemistry and Biochemistry" << endl;
-    cout << "6. Duane Physics and Astrophysics" << endl;
-    cout << "7. Eaton Humanities" << endl;
-    cout << "8. Ekeley Science" << endl;
-    cout << "9. Engineering Center" << endl;
-    cout << "10. Environmental Design" << endl;
-    cout << "11. Fiske Planetarium" << endl;
-    cout << "12. Fleming Law" << endl;
-    cout << "13. Folsom Field" << endl;
-    cout << "14. Hellems Arts and Sciences" << endl;
-    cout << "15. Imig Music Building" << endl;
-    cout << "16. Ketchum Arts and Sciences" << endl;
-    cout << "17. Koelbel Building (Leeds School of Business)" << endl;
-    cout << "18. Macky Auditorium Concert Hall" << endl;
-    cout << "19. Mathematics" << endl;
-    cout << "20. Muenzinger Auditorium" << endl;
-    cout << "21. Norlin Library" << endl;
-    cout << "22. Sewall Dining Center" << endl;
-    cout << "23. Student Recreation Center" << endl;
-    cout << "24. University Memorial Center," << endl;
-    cout << "25. Wardenburg Health Center" << endl;
+    cout << "6. CU Events Center" << endl;
+    cout << "7. Duane Physics and Astrophysics" << endl;
+    cout << "8. Eaton Humanities" << endl;
+    cout << "9. Ekeley Science" << endl;
+    cout << "10. Engineering Center" << endl;
+    cout << "11. Environmental Design" << endl;
+    cout << "12. Fiske Planetarium" << endl;
+    cout << "13. Fleming Law" << endl;
+    cout << "14. Folsom Field" << endl;
+    cout << "15. Hellems Arts and Sciences" << endl;
+    cout << "16. Imig Music Building" << endl;
+    cout << "17. Ketchum Arts and Sciences" << endl;
+    cout << "18. Koelbel Building (Leeds School of Business)" << endl;
+    cout << "19. Macky Auditorium Concert Hall" << endl;
+    cout << "20. Mathematics" << endl;
+    cout << "21. Muenzinger Auditorium" << endl;
+    cout << "22. Norlin Library" << endl;
+    cout << "23. Sewall Dining Center" << endl;
+    cout << "24. Student Recreation Center" << endl;
+    cout << "25. University Memorial Center," << endl;
+    cout << "26. Wardenburg Health Center" << endl;
 }
 
 int main(int argc, char const *argv[])
@@ -139,9 +140,9 @@ int main(int argc, char const *argv[])
     getline(cin, input1);
     n_input1 = stoi(input1);
     
-    while((n_input1 >= 1 && n_input1 <= 25) != true)
+    while((n_input1 >= 1 && n_input1 <= 26) != true)
     {
-        cout << "Invalid! Please enter a value input from 1 to 25 for starting point:" << endl;
+        cout << "Invalid! Please enter a value input from 1 to 26 for starting point:" << endl;
         menu();
         getline(cin, input1);
         n_input1 = stoi(input1);
@@ -151,7 +152,7 @@ int main(int argc, char const *argv[])
     float x1 = nodeArray[n_input1-1].distanceX;
     float y1 = nodeArray[n_input1-1].distanceY;
     
-    while((n_input1 >= 1 && n_input1 <= 25) == true)
+    while((n_input1 >= 1 && n_input1 <= 26) == true)
     {
         cout << "Your starting point is " << name1 << ", correct? (type 'y' for yes or 'n' for no)" << endl;
         getline(cin, s_input);
@@ -164,9 +165,9 @@ int main(int argc, char const *argv[])
             getline(cin, input1);
             n_input1 = stoi(input1);
             
-            while((n_input1 >= 1 && n_input1 <= 25) != true)
+            while((n_input1 >= 1 && n_input1 <= 26) != true)
             {
-                cout << "Invalid! Please enter a value input from 1 to 25 for starting point:" << endl;
+                cout << "Invalid! Please enter a value input from 1 to 26 for starting point:" << endl;
                 menu();
                 getline(cin, input1);
                 n_input1 = stoi(input1);
@@ -189,9 +190,9 @@ int main(int argc, char const *argv[])
     getline(cin, input2);
     n_input2 = stoi(input2);
     
-    while((n_input2 >= 1 && n_input2 <= 25) != true)
+    while((n_input2 >= 1 && n_input2 <= 26) != true)
     {
-        cout << "Invalid! Please enter a valid input from 1 to 25 for your destination:" << endl;
+        cout << "Invalid! Please enter a valid input from 1 to 26 for your destination:" << endl;
         menu();
         getline(cin, input2);
         n_input2 = stoi(input2);
@@ -201,7 +202,7 @@ int main(int argc, char const *argv[])
     float x2 = nodeArray[n_input2-1].distanceX;
     float y2 = nodeArray[n_input2-1].distanceY;
     
-    while((n_input2 >= 1 && n_input2 <= 25) == true)
+    while((n_input2 >= 1 && n_input2 <= 26) == true)
     {
         cout << "Your destination is " << name2 << ", correct? (type 'y' for yes or 'n' for no)" << endl;
         getline(cin, s_input);
@@ -214,9 +215,9 @@ int main(int argc, char const *argv[])
             getline(cin, input2);
             n_input2 = stoi(input2);
             
-            while((n_input2 >= 1 && n_input2 <= 25) != true)
+            while((n_input2 >= 1 && n_input2 <= 26) != true)
             {
-                cout << "Invalid! Please enter a valid input from 1 to 25 for your destination:" << endl;
+                cout << "Invalid! Please enter a valid input from 1 to 26 for your destination:" << endl;
                 menu();
                 getline(cin, input2);
                 n_input2 = stoi(input2);

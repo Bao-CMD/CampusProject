@@ -3,6 +3,7 @@ Center for Community, 40.004428, -105.264932
 Clare Small Arts and Science, 40.010610, -105.269791
 Colorado Law, 40.001211, -105.262419
 Cristol Chemistry and Biochemistry, 40.007627, -105.271000
+CU Events Center, 40.004807, -105.260583
 Duane Physics and Astrophysics, 40.008019, -105.267473
 Eaton Humanities, 40.009284, -105.271702
 Ekeley Science, 40.008222, -105.271786
