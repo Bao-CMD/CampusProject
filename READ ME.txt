@@ -1,0 +1,29 @@
+#Statement
+
+Our software is aim to ease class registration at CU by estimating walking distance between buildings.
+
+#Requirements
+
+Access to terminal
+
+#Installation
+
+N/A
+
+#Instructions
+
+Run the driver file in terminal with two arguements. 
+
+	Example: driver.exe list.txt
+
+You will be given a menu. Select first the departing building.
+Confirm selection.
+Then select the second building. 
+Confirm seleection.
+
+Output will be given the best, avg and worst case for travel time.
+
+
+#Updates
+
+Latest version can be found at https://github.com/fungusmash/CampusProject
