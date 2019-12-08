@@ -6,10 +6,11 @@
 #include <queue>
 #include <sstream>
 #include <fstream>
+#define SIZE 26
 
 using namespace std;
 
-struct node nodeArray[26];
+struct node nodeArray[SIZE];
 
 void menu()
 {
@@ -116,23 +117,23 @@ int main(int argc, char const *argv[])
 //        string place2 = h.getnth(NULL, input1);
 //    }
     
-//    graph g;
-//    //Creating vertices
-//    for (int i = 0; i < 24; i++)
-//    {
-//        g.addVertex(nodeArray[i].name);
-//    }
-//    //Adding edges
-//    for (int j = 0; j < 24; j++) {
-//        for (int k = j+1; k < 24; k++)
-//        {
-//            node v1 = nodeArray[j];
-//            node v2 = nodeArray[k];
-//            g.addEdge(v1, v2);
-//        }
-//    }
-//    //Printing the graph
-//    g.printGraph();
+    graph g;
+    //Creating vertices
+    for (int i = 0; i < SIZE; i++)
+    {
+        g.addVertex(nodeArray[i].name);
+    }
+    //Adding edges
+    for (int j = 0; j < SIZE; j++) {
+        for (int k = j+1; k < SIZE; k++)
+        {
+            node v1 = nodeArray[j];
+            node v2 = nodeArray[k];
+            g.addEdge(v1, v2);
+        }
+    }
+    //Printing the graph
+    //g.printGraph();
     
     //first input
     cout << "Choose your starting point:" << endl;
@@ -140,7 +141,7 @@ int main(int argc, char const *argv[])
     getline(cin, input1);
     n_input1 = stoi(input1);
     
-    while((n_input1 >= 1 && n_input1 <= 26) != true)
+    while((n_input1 >= 1 && n_input1 <= SIZE) != true)
     {
         cout << "Invalid! Please enter a value input from 1 to 26 for starting point:" << endl;
         menu();
@@ -152,7 +153,7 @@ int main(int argc, char const *argv[])
     float x1 = nodeArray[n_input1-1].distanceX;
     float y1 = nodeArray[n_input1-1].distanceY;
     
-    while((n_input1 >= 1 && n_input1 <= 26) == true)
+    while((n_input1 >= 1 && n_input1 <= SIZE) == true)
     {
         cout << "Your starting point is " << name1 << ", correct? (type 'y' for yes or 'n' for no)" << endl;
         getline(cin, s_input);
@@ -165,7 +166,7 @@ int main(int argc, char const *argv[])
             getline(cin, input1);
             n_input1 = stoi(input1);
             
-            while((n_input1 >= 1 && n_input1 <= 26) != true)
+            while((n_input1 >= 1 && n_input1 <= SIZE) != true)
             {
                 cout << "Invalid! Please enter a value input from 1 to 26 for starting point:" << endl;
                 menu();
@@ -190,7 +191,7 @@ int main(int argc, char const *argv[])
     getline(cin, input2);
     n_input2 = stoi(input2);
     
-    while((n_input2 >= 1 && n_input2 <= 26) != true)
+    while((n_input2 >= 1 && n_input2 <= SIZE) != true)
     {
         cout << "Invalid! Please enter a valid input from 1 to 26 for your destination:" << endl;
         menu();
@@ -202,7 +203,7 @@ int main(int argc, char const *argv[])
     float x2 = nodeArray[n_input2-1].distanceX;
     float y2 = nodeArray[n_input2-1].distanceY;
     
-    while((n_input2 >= 1 && n_input2 <= 26) == true)
+    while((n_input2 >= 1 && n_input2 <= SIZE) == true)
     {
         cout << "Your destination is " << name2 << ", correct? (type 'y' for yes or 'n' for no)" << endl;
         getline(cin, s_input);
@@ -215,7 +216,7 @@ int main(int argc, char const *argv[])
             getline(cin, input2);
             n_input2 = stoi(input2);
             
-            while((n_input2 >= 1 && n_input2 <= 26) != true)
+            while((n_input2 >= 1 && n_input2 <= SIZE) != true)
             {
                 cout << "Invalid! Please enter a valid input from 1 to 26 for your destination:" << endl;
                 menu();
@@ -250,10 +251,18 @@ int main(int argc, char const *argv[])
     float aveDist = averageCaseDistance(bestDist, worstDist);
     float aveTime = distanceToTime(aveDist);
     
-    cout << "Between " << name1 << " and " << name2 << ":" << endl;
-    cout << "Best case distance and time are " << bestDist << " miles and roughly " << bestTime << " minutes" << endl;
-    cout << "Worst case distance and time are " << worstDist << " miles and roughly " << worstTime << " minutes" << endl;
-    cout << "Average case distance and time are " << aveDist << " miles and roughly " << aveTime << " minutes" << endl;
+    //dEdge(name1, name2)
+    g.DijkstraAlgorithm(name1, name2);
+    g.printPath(name2);
+//    cout << bestDist << endl;
+//    cout << "Best case distance and time are " << bestDist << " miles and roughly " << bestTime << " minutes" << endl;
+//    cout << "Worst case distance and time are " << worstDist << " miles and roughly " << worstTime << " minutes" << endl;
+//    cout << "Average case distance and time are " << aveDist << " miles and roughly " << aveTime << " minutes" << endl;
+    
+//    cout << "Between " << name1 << " and " << name2 << ":" << endl;
+//    cout << "Best case distance and time are " << bestDist << " miles and roughly " << bestTime << " minutes" << endl;
+//    cout << "Worst case distance and time are " << worstDist << " miles and roughly " << worstTime << " minutes" << endl;
+//    cout << "Average case distance and time are " << aveDist << " miles and roughly " << aveTime << " minutes" << endl;
 
     infile.close();
 
