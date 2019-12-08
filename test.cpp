@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
   string x;
 
   if (fs.is_open()) {
-    while (fs) {
+    while (!(fs.eof())) {
       getline(fs, line);
       istringstream ss(line);
 
@@ -46,10 +46,15 @@ int main(int argc, char* argv[]) {
   fs.close();
   h.printTable();
 
-  int indexW = h.hashFunction("Wardenburg Health Center");
+  int indexW = h.hashFunction("Engineering Center");
   cout << indexW << endl;
-  node* location = h.probeFunction(h.tableNode(indexW), "Wardenburg Health Center");
+  node* location = h.tableNode(indexW);
+  cout << location->name << endl;
+  cout << location->distanceX << endl;
+  cout << location->distanceY << endl;
+  int newIndex = h.probeFunction(indexW, "Engineering Center");
   cout << "made it" << endl;
+  location = h.tableNode(newIndex);
   cout << location->name << endl;
   cout << location->distanceX << endl;
   cout << location->distanceY << endl;

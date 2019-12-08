@@ -7,7 +7,7 @@
 
 using namespace std;
 
-struct node nodeArray[24];
+struct node nodeArray[26];
 
 int main (int argc, char* argv[]) {
   string filename;
@@ -61,7 +61,6 @@ int main (int argc, char* argv[]) {
   //   cout << "\tString name - " << nodeArray[i].name << endl;
   //   cout << "\tDistance X - " << nodeArray[i].distanceX << endl;
   //   cout << "\tDistance Y - " << nodeArray[i].distanceY << endl;
-  // }
 
   // //Testing printing with nested loop
   // for (int a = 0; a < 10; a++) {
