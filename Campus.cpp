@@ -169,7 +169,7 @@ void graph::printHelper(vertex* end) {
   if (end == NULL) return;
   else {
     printHelper(end->pred);
-    cout << end->name << " ";
+    cout << "Between " << end->name << " and ";
   }
 }
 
@@ -183,7 +183,7 @@ void graph::printPath(string end) {
   if (last->pred != NULL) {
     printHelper(last->pred);
   }
-  cout << last->name << endl;
+  cout << last->name << ":" << endl;
 }
 
 //Constructor to initialize hash table size
