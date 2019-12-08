@@ -104,7 +104,7 @@ int main(int argc, char const *argv[])
             getline(ss, distanceY);
             float y = stof(distanceY);
 
-            h.addItem(name, x, y);
+            nodeArray[i].addElement(name, x, y);
         }
         else
             break;
@@ -168,10 +168,10 @@ int main(int argc, char const *argv[])
     {
         getline(cin, input1);
         n_input1 = stoi(input1);
-        string name1 = nodeArray[n_input1].name;
-        float x1 = nodeArray[n_input1].distanceX;
-        float y1 = nodeArray[n_input1].distanceY;
     }
+    string name1 = nodeArray[n_input1].name;
+    float x1 = nodeArray[n_input1].distanceX;
+    float y1 = nodeArray[n_input1].distanceY;
     
     menu2();
     //second input
@@ -179,10 +179,10 @@ int main(int argc, char const *argv[])
     {
         getline(cin, input2);
         n_input2 = stoi(input2);
-        string name2 = nodeArray[n_input2].name;
-        float x2 = nodeArray[n_input2].distanceX;
-        float y2 = nodeArray[n_input2].distanceY;
     }
+    string name2 = nodeArray[n_input2].name;
+    float x2 = nodeArray[n_input2].distanceX;
+    float y2 = nodeArray[n_input2].distanceY;
     
     //the distances of longtitude and latitude
     float distX = distanceX(x1, x2);
