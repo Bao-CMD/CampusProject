@@ -154,7 +154,7 @@ int main(int argc, char const *argv[])
     
     while((n_input1 >= 1 && n_input1 <= 24) == true)
     {
-        cout << "Your starting point is " << name1 << ", right? (type 'y' for yes or 'n' for no)" << endl;
+        cout << "Your starting point is " << name1 << ", correct? (type 'y' for yes or 'n' for no)" << endl;
         getline(cin, s_input);
         if (s_input == "y")
             break;
@@ -195,7 +195,7 @@ int main(int argc, char const *argv[])
     
     while((n_input2 >= 1 && n_input2 <= 24) == true)
     {
-        cout << "Your destination is " << name2 << ", right? (type 'y' for yes or 'n' for no)" << endl;
+        cout << "Your destination is " << name2 << ", correct? (type 'y' for yes or 'n' for no)" << endl;
         getline(cin, s_input);
         if (s_input == "y")
             break;
