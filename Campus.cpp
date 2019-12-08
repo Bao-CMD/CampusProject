@@ -174,16 +174,17 @@ void graph::printHelper(vertex* end) {
 }
 
 void graph::printPath(string end) {
-  vertex* last;
-  for (unsigned int i = 0; i < vertices.size(); i++) {
-    if (vertices[i]->name == end) {
-      last = vertices[i];
+    vertex* last;
+    for (unsigned int i = 0; i < vertices.size(); i++) {
+        if (vertices[i]->name == end) {
+            last = vertices[i];
+        }
     }
-  }
-  if (last->pred != NULL) {
-    printHelper(last->pred);
-  }
-  cout << last->name << ":" << endl;
+    if (last->pred != NULL) {
+        printHelper(last->pred);
+    }
+    cout << last->name << ":" << endl;
+    cout << "Average time: " << last->distance << " minutes" << endl;
 }
 
 //Constructor to initialize hash table size
