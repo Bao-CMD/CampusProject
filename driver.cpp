@@ -142,7 +142,7 @@ int main(int argc, char const *argv[])
     
     while((n_input1 >= 1 && n_input1 <= 24) != true)
     {
-        cout << "Invalid! Please enter a value input from 1 to 24." << endl;
+        cout << "Invalid! Please enter a value input from 1 to 24 for starting point:" << endl;
         menu();
         getline(cin, input1);
         n_input1 = stoi(input1);
@@ -164,6 +164,15 @@ int main(int argc, char const *argv[])
             menu();
             getline(cin, input1);
             n_input1 = stoi(input1);
+            
+            while((n_input1 >= 1 && n_input1 <= 24) != true)
+            {
+                cout << "Invalid! Please enter a value input from 1 to 24 for starting point:" << endl;
+                menu();
+                getline(cin, input1);
+                n_input1 = stoi(input1);
+            }
+            
             name1 = nodeArray[n_input1-1].name;
             x1 = nodeArray[n_input1-1].distanceX;
             y1 = nodeArray[n_input1-1].distanceY;
@@ -183,7 +192,7 @@ int main(int argc, char const *argv[])
     
     while((n_input2 >= 1 && n_input2 <= 24) != true)
     {
-        cout << "Invalid! Please enter a value input from 1 to 24." << endl;
+        cout << "Invalid! Please enter a valid input from 1 to 24 for your destination:" << endl;
         menu();
         getline(cin, input2);
         n_input2 = stoi(input2);
@@ -205,6 +214,15 @@ int main(int argc, char const *argv[])
             menu();
             getline(cin, input2);
             n_input2 = stoi(input2);
+            
+            while((n_input2 >= 1 && n_input2 <= 24) != true)
+            {
+                cout << "Invalid! Please enter a valid input from 1 to 24 for your destination:" << endl;
+                menu();
+                getline(cin, input2);
+                n_input2 = stoi(input2);
+            }
+            
             name2 = nodeArray[n_input2-1].name;
             x2 = nodeArray[n_input2-1].distanceX;
             y2 = nodeArray[n_input2-1].distanceY;
