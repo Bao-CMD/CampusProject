@@ -16,6 +16,7 @@ Imig Music Building, 40.006029, -105.269062
 Ketchum Arts and Sciences, 40.008196, -105.270215
 Koelbel Building (Leeds School of Business), 40.005646, -105.263444
 Macky Auditorium Concert Hall, 40.010001, -105.272777
+Mathematics, 40.007798, -105.264544
 Muenzinger Auditorium, 40.008736, -105.268876
 Norlin Library, 40.008822, -105.270791
 Sewall Dining Center, 40.010593, -105.271550

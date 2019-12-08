@@ -9,7 +9,7 @@
 
 using namespace std;
 
-struct node nodeArray[24];
+struct node nodeArray[25];
 
 void menu()
 {
@@ -31,12 +31,13 @@ void menu()
     cout << "16. Ketchum Arts and Sciences" << endl;
     cout << "17. Koelbel Building (Leeds School of Business)" << endl;
     cout << "18. Macky Auditorium Concert Hall" << endl;
-    cout << "19. Muenzinger Auditorium" << endl;
-    cout << "20. Norlin Library" << endl;
-    cout << "21. Sewall Dining Center" << endl;
-    cout << "22. Student Recreation Center" << endl;
-    cout << "23. University Memorial Center," << endl;
-    cout << "24. Wardenburg Health Center" << endl;
+    cout << "19. Mathematics" << endl;
+    cout << "20. Muenzinger Auditorium" << endl;
+    cout << "21. Norlin Library" << endl;
+    cout << "22. Sewall Dining Center" << endl;
+    cout << "23. Student Recreation Center" << endl;
+    cout << "24. University Memorial Center," << endl;
+    cout << "25. Wardenburg Health Center" << endl;
 }
 
 int main(int argc, char const *argv[])
@@ -55,8 +56,6 @@ int main(int argc, char const *argv[])
     int i = 0;
     
     string line;
-    
-    //menu1();
     
     while(getline(infile, line))
     {
@@ -140,9 +139,9 @@ int main(int argc, char const *argv[])
     getline(cin, input1);
     n_input1 = stoi(input1);
     
-    while((n_input1 >= 1 && n_input1 <= 24) != true)
+    while((n_input1 >= 1 && n_input1 <= 25) != true)
     {
-        cout << "Invalid! Please enter a value input from 1 to 24 for starting point:" << endl;
+        cout << "Invalid! Please enter a value input from 1 to 25 for starting point:" << endl;
         menu();
         getline(cin, input1);
         n_input1 = stoi(input1);
@@ -152,7 +151,7 @@ int main(int argc, char const *argv[])
     float x1 = nodeArray[n_input1-1].distanceX;
     float y1 = nodeArray[n_input1-1].distanceY;
     
-    while((n_input1 >= 1 && n_input1 <= 24) == true)
+    while((n_input1 >= 1 && n_input1 <= 25) == true)
     {
         cout << "Your starting point is " << name1 << ", correct? (type 'y' for yes or 'n' for no)" << endl;
         getline(cin, s_input);
@@ -165,9 +164,9 @@ int main(int argc, char const *argv[])
             getline(cin, input1);
             n_input1 = stoi(input1);
             
-            while((n_input1 >= 1 && n_input1 <= 24) != true)
+            while((n_input1 >= 1 && n_input1 <= 25) != true)
             {
-                cout << "Invalid! Please enter a value input from 1 to 24 for starting point:" << endl;
+                cout << "Invalid! Please enter a value input from 1 to 25 for starting point:" << endl;
                 menu();
                 getline(cin, input1);
                 n_input1 = stoi(input1);
@@ -190,9 +189,9 @@ int main(int argc, char const *argv[])
     getline(cin, input2);
     n_input2 = stoi(input2);
     
-    while((n_input2 >= 1 && n_input2 <= 24) != true)
+    while((n_input2 >= 1 && n_input2 <= 25) != true)
     {
-        cout << "Invalid! Please enter a valid input from 1 to 24 for your destination:" << endl;
+        cout << "Invalid! Please enter a valid input from 1 to 25 for your destination:" << endl;
         menu();
         getline(cin, input2);
         n_input2 = stoi(input2);
@@ -202,7 +201,7 @@ int main(int argc, char const *argv[])
     float x2 = nodeArray[n_input2-1].distanceX;
     float y2 = nodeArray[n_input2-1].distanceY;
     
-    while((n_input2 >= 1 && n_input2 <= 24) == true)
+    while((n_input2 >= 1 && n_input2 <= 25) == true)
     {
         cout << "Your destination is " << name2 << ", correct? (type 'y' for yes or 'n' for no)" << endl;
         getline(cin, s_input);
@@ -215,9 +214,9 @@ int main(int argc, char const *argv[])
             getline(cin, input2);
             n_input2 = stoi(input2);
             
-            while((n_input2 >= 1 && n_input2 <= 24) != true)
+            while((n_input2 >= 1 && n_input2 <= 25) != true)
             {
-                cout << "Invalid! Please enter a valid input from 1 to 24 for your destination:" << endl;
+                cout << "Invalid! Please enter a valid input from 1 to 25 for your destination:" << endl;
                 menu();
                 getline(cin, input2);
                 n_input2 = stoi(input2);
@@ -250,10 +249,10 @@ int main(int argc, char const *argv[])
     float aveDist = averageCaseDistance(bestDist, worstDist);
     float aveTime = distanceToTime(aveDist);
     
-//    cout << "Between " << name1 << " and " << name2 << ":" << endl;
-//    cout << "Best case distance and time are " << bestDist << " miles and " << bestTime << " minutes" << endl;
-//    cout << "Worst case distance and time are " << worstDist << " miles and " << worstTime << " minutes" << endl;
-//    cout << "Average case distance and time are " << aveDist << " miles and " << aveTime << " minutes" << endl;
+    cout << "Between " << name1 << " and " << name2 << ":" << endl;
+    cout << "Best case distance and time are " << bestDist << " miles and roughly " << bestTime << " minutes" << endl;
+    cout << "Worst case distance and time are " << worstDist << " miles and roughly " << worstTime << " minutes" << endl;
+    cout << "Average case distance and time are " << aveDist << " miles and roughly " << aveTime << " minutes" << endl;
 
     infile.close();
 
