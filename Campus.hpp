@@ -20,7 +20,7 @@ struct node {
   }
 };
 
-struct node nodeArray[24];
+// struct node nodeArray[24];
 
 #endif
 
@@ -46,9 +46,10 @@ class graph {
   private:
   vector<vertex*> vertices;
   public:
-  void addEdge(node* v1, node* v2);
+  void addEdge(node v1, node v2);
   void addVertex(string name);
   vertex* DijkstraAlgorithm(string start, string end);
+  void printGraph();
   void printHelper(vertex* end);
   void printPath(string end);
 };
@@ -75,6 +76,7 @@ class hashtable {
     void addItem(string name, float distY, float distX);
     void printTable(); //Test function
     node* probeFunction(node* curr, string name);
+    node* tableNode(int index);
 };
 
 #endif

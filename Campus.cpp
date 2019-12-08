@@ -65,20 +65,20 @@ void graph::addVertex(string name) {
 }
 
 //Function to add edges between CU  Buildings
-void graph::addEdge(node* v1, node* v2)
+void graph::addEdge(node v1, node v2)
 {
   //Looking for vector of vertices v1
   for (unsigned int i = 0; i < vertices.size(); i++)
   {
-    if (vertices[i]->name == v1->name)
+    if (vertices[i]->name == v1.name)
     {
       for (unsigned int j = 0; i < vertices.size(); j++)
       {
-        if (vertices[j]->name == v2->name && i != j)
+        if (vertices[j]->name == v2.name && i != j)
         {
           //Calculating average distance between v1 and v2
-          float distX = abs(v1->distanceX - v2->distanceX);
-          float distY = abs(v1->distanceY - v2->distanceY);
+          float distX = abs(v1.distanceX - v2.distanceX);
+          float distY = abs(v1.distanceY - v2.distanceY);
           float distC = diagonalDistance(distX, distY);
           float avg = averageCaseDistance(distC, distX+distY);
           float time = distanceToTime(avg);
@@ -135,6 +135,16 @@ vertex* graph::DijkstraAlgorithm(string start, string end) {
     solved.push_back(solvedV);
   }
   return endV;
+}
+
+void graph::printGraph() {
+  for (unsigned int i = 0; i < vertices.size(); i++) {
+    cout << vertices[i]->name << ":" << endl;
+    for (unsigned int j = 0; j < vertices[i]->adj.size(); j++) {
+      cout << "\t" << vertices[i]->adj[j].v->name << endl;
+      cout << "\t" << vertices[i]->adj[j].weight << endl;
+    }
+  }
 }
 
 void graph::printHelper(vertex* end) {
@@ -209,6 +219,11 @@ node* hashtable::probeFunction (node* curr, string name) {
     ptr = ptr->next;
   }
   return ptr;
+}
+
+node* hashtable::tableNode(int index) {
+  node* temp = table[index];
+  return temp;
 }
 
 //Hash function

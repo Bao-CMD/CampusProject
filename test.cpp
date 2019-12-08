@@ -46,12 +46,13 @@ int main(int argc, char* argv[]) {
   fs.close();
   h.printTable();
 
-  int indexWardenburg = h.hashFunction("Wardenburg Health Center");
-  cout << indexWardenburg << endl;
-  node* location = probeFunction(h[indexWardenburg], "Wardenburg Health Center");
-  // cout << location->name << endl;
-  // cout << location->distanceX << endl;
-  // cout << location->distanceY << endl;
+  int indexW = h.hashFunction("Wardenburg Health Center");
+  cout << indexW << endl;
+  node* location = h.probeFunction(h.tableNode(indexW), "Wardenburg Health Center");
+  cout << "made it" << endl;
+  cout << location->name << endl;
+  cout << location->distanceX << endl;
+  cout << location->distanceY << endl;
 
   //Test 3: using probing function
   // node * n = NULL;
