@@ -29,9 +29,9 @@ float distanceX (float x1, float x2) {
 float diagonalDistance(float x, float y) {
   //Converting miles to feet
   int feetX = x * 5280;
-  cout << feetX << endl;
+  //cout << feetX << endl;
   int feetY = y * 5280;
-  cout << feetY << endl;
+  //cout << feetY << endl;
   float feetC = sqrt(pow(feetX,2)+pow(feetY,2));
   float diagonal = feetC / 5280;
   return diagonal;
@@ -50,8 +50,8 @@ float averageCaseDistance(float best, float worst) {
 //Function to convert distance in miles to walking time using the average
 //walk pace of 1 mile every 15 minutes
 float distanceToTime (float distance) {
-  float minutes = distance * 20;
-  return round(minutes);
+  float minutes = distance * 15;
+  return minutes;
 }
 
 //Function to add vertex of CU buildings
@@ -84,9 +84,9 @@ void graph::addEdge(node v1, node v2)
         {
           // cout << "Distance between " << v1.name << " and " << v2.name << endl;
           //Calculating average distance between v1 and v2
-          float distX = abs(v1.distanceX - v2.distanceX);
+          float distX = distanceX(v1.distanceX, v2.distanceX);
           // cout << "\tX distance in miles: " << distX << endl;
-          float distY = abs(v1.distanceY - v2.distanceY);
+          float distY = distanceY(v1.distanceY, v2.distanceY);
           // cout << "\tY distance in miles: " << distY << endl;
           float distC = diagonalDistance(distX, distY);
           // cout << "\tDistance: " << distC << endl;
@@ -126,12 +126,15 @@ vertex* graph::DijkstraAlgorithm(string start, string end) {
   vertex* parent = NULL;
   while (!endV->visited) {
     vertex* solvedV = NULL;
-    int minDistance = 100000;
+    float minDistance = 100000;
     for (unsigned int i = 0; i < solved.size(); i++) {
       vertex* s = solved[i];
       for (unsigned int j = 0; j < s->adj.size(); j++) {
         if (!s->adj[j].v->visited) {
-          int dist = s->distance + s->adj[j].weight;
+          float dist = s->distance + s->adj[j].weight;
+//            cout << s->distance << endl;
+//            cout << s->adj[j].weight << endl;
+//            cout << dist << endl;
           if (dist < minDistance) {
             solvedV = s->adj[j].v;
             minDistance = dist;
@@ -141,6 +144,7 @@ vertex* graph::DijkstraAlgorithm(string start, string end) {
       }
     }
     solvedV->distance = minDistance;
+//      cout << solvedV->distance << endl;
     solvedV->pred = parent;
     solvedV->visited = true;
     solved.push_back(solvedV);

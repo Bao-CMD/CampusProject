@@ -13,7 +13,7 @@ struct node {
   float distanceY;
   float distanceX;
   node* next = NULL;
-  addElement(string n,float x,float y) {
+  void addElement(string n,float x,float y) {
     name = n;
     distanceY = y;
     distanceX = x;

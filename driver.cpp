@@ -128,12 +128,19 @@ int main(int argc, char const *argv[])
         for (int k = j+1; k < SIZE; k++)
         {
             node v1 = nodeArray[j];
+//            cout << v1.name << endl;
+//            cout << v1.distanceX << endl;
+//            cout << v1.distanceY << endl;
             node v2 = nodeArray[k];
+//            cout << v2.name << endl;
+//            cout << v2.distanceX << endl;
+//            cout << v2.distanceY << endl;
             g.addEdge(v1, v2);
         }
     }
     //Printing the graph
-    //g.printGraph();
+//    g.printVertices();
+//    g.printGraph();
     
     //first input
     cout << "Choose your starting point:" << endl;
@@ -238,31 +245,32 @@ int main(int argc, char const *argv[])
     //the distances of longtitude and latitude
     float distX = distanceX(x1, x2);
     float distY = distanceY(y1, y2);
-    
+
     //best distance and time
     float bestDist = diagonalDistance(distX, distY);
     float bestTime = distanceToTime(bestDist);
-    
+
     //worst distance and time
     float worstDist = worstCaseDistance(distX, distY);
     float worstTime = distanceToTime(worstDist);
-    
+
     //average distance and time
     float aveDist = averageCaseDistance(bestDist, worstDist);
     float aveTime = distanceToTime(aveDist);
     
-    //dEdge(name1, name2)
+    
     g.DijkstraAlgorithm(name1, name2);
     g.printPath(name2);
-//    cout << bestDist << endl;
+    //cout << bestDist << endl;
 //    cout << "Best case distance and time are " << bestDist << " miles and roughly " << bestTime << " minutes" << endl;
 //    cout << "Worst case distance and time are " << worstDist << " miles and roughly " << worstTime << " minutes" << endl;
 //    cout << "Average case distance and time are " << aveDist << " miles and roughly " << aveTime << " minutes" << endl;
     
-//    cout << "Between " << name1 << " and " << name2 << ":" << endl;
-//    cout << "Best case distance and time are " << bestDist << " miles and roughly " << bestTime << " minutes" << endl;
-//    cout << "Worst case distance and time are " << worstDist << " miles and roughly " << worstTime << " minutes" << endl;
-//    cout << "Average case distance and time are " << aveDist << " miles and roughly " << aveTime << " minutes" << endl;
+    cout << " " << endl;
+    cout << "Between " << name1 << " and " << name2 << ":" << endl;
+    cout << "Best case distance and time are " << bestDist << " miles and roughly " << bestTime << " minutes" << endl;
+    cout << "Worst case distance and time are " << worstDist << " miles and roughly " << worstTime << " minutes" << endl;
+    cout << "Average case distance and time are " << aveDist << " miles and roughly " << aveTime << " minutes" << endl;
 
     infile.close();
 
